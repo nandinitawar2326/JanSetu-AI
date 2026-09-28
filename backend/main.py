@@ -29,7 +29,7 @@ app.add_middleware(
         "http://localhost:5176",
         "http://127.0.0.1:5173",
         "http://127.0.0.1:5176",
-          "https://jan-setu-9o6nagq5k-nandini2326.vercel.app"
+         "https://jan-setu-ai-five.vercel.app",
 
         # Add your Vercel frontend URL here later
         # "https://your-frontend.vercel.app",
