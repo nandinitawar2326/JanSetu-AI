@@ -1,10 +1,10 @@
-﻿from fastapi import FastAPI, Depends
+from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 
-from database import get_db
-from models import Department, Scheme, Location
-from ai_routes import router as ai_router
+from backend.database import get_db
+from backend.models import Department, Scheme, Location
+from backend.ai_routes import router as ai_router
 
 
 app = FastAPI(
