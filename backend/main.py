@@ -1,6 +1,6 @@
-﻿from .fastapi import FastAPI, Depends
-from .fastapi.middleware.cors import CORSMiddleware
-from .sqlalchemy.orm import Session
+﻿from fastapi import FastAPI, Depends
+from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy.orm import Session
 
 from database import get_db
 from models import Department, Scheme, Location
