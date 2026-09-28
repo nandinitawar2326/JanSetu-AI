@@ -1,17 +1,26 @@
-from fastapi import FastAPI, Depends
+﻿
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from sqlalchemy.orm import Session
+from pathlib import Path
+import pandas as pd
 
-from backend.database import get_db
-from backend.models import Department, Scheme, Location
 from backend.ai_routes import router as ai_router
 
+
+# --------------------------------------------------
+# APP
+# --------------------------------------------------
 
 app = FastAPI(
     title="JanSetu AI",
     description="Cross-Ministry Governance & Impact Intelligence Platform",
     version="1.0.0"
 )
+
+
+# --------------------------------------------------
+# CORS
+# --------------------------------------------------
 
 app.add_middleware(
     CORSMiddleware,
@@ -20,13 +29,34 @@ app.add_middleware(
         "http://localhost:5176",
         "http://127.0.0.1:5173",
         "http://127.0.0.1:5176",
+
+        # Add your Vercel frontend URL here later
+        # "https://your-frontend.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+# --------------------------------------------------
+# AI ROUTES
+# --------------------------------------------------
+
 app.include_router(ai_router)
 
+
+# --------------------------------------------------
+# DATA DIRECTORY
+# --------------------------------------------------
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = PROJECT_ROOT / "data"
+
+
+# --------------------------------------------------
+# ROOT
+# --------------------------------------------------
 
 @app.get("/")
 def root():
@@ -36,46 +66,61 @@ def root():
     }
 
 
+# --------------------------------------------------
+# DEPARTMENTS
+# --------------------------------------------------
+
 @app.get("/api/departments")
-def get_departments(db: Session = Depends(get_db)):
+def get_departments():
 
-    departments = db.query(Department).all()
+    file_path = DATA_DIR / "departments.csv"
 
-    return [
-        {
-            "department_id": department.department_id,
-            "department_name": department.department_name,
-            "ministry": department.ministry
-        }
-        for department in departments
-    ]
+    departments = pd.read_csv(file_path)
 
+    return departments[
+        [
+            "department_id",
+            "department_name",
+            "ministry"
+        ]
+    ].to_dict(orient="records")
+
+
+# --------------------------------------------------
+# SCHEMES
+# --------------------------------------------------
 
 @app.get("/api/schemes")
-def get_schemes(db: Session = Depends(get_db)):
+def get_schemes():
 
-    schemes = db.query(Scheme).all()
+    file_path = DATA_DIR / "schemes.csv"
 
-    return [
-        {
-            "scheme_id": scheme.scheme_id,
-            "scheme_name": scheme.scheme_name,
-            "department_id": scheme.department_id
-        }
-        for scheme in schemes
-    ]
+    schemes = pd.read_csv(file_path)
 
+    return schemes[
+        [
+            "scheme_id",
+            "scheme_name",
+            "department_id"
+        ]
+    ].to_dict(orient="records")
+
+
+# --------------------------------------------------
+# DISTRICTS
+# --------------------------------------------------
 
 @app.get("/api/districts")
-def get_districts(db: Session = Depends(get_db)):
+def get_districts():
 
-    districts = db.query(Location).all()
+    file_path = DATA_DIR / "locations.csv"
 
-    return [
-        {
-            "district_id": district.district_id,
-            "district": district.district,
-            "state": district.state
-        }
-        for district in districts
-    ]
+    locations = pd.read_csv(file_path)
+
+    return locations[
+        [
+            "district_id",
+            "district",
+            "state"
+        ]
+    ].to_dict(orient="records")
