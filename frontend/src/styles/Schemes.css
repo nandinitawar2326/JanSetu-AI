@@ -1,0 +1,472 @@
+﻿/* =========================================================
+   JANSETU AI — SCHEMES PAGE
+   Government Intelligence Dashboard Style
+========================================================= */
+
+.schemes-page {
+  width: 100%;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.schemes-page .page-heading {
+  margin-bottom: 26px;
+}
+
+.schemes-page .page-heading h1 {
+  margin: 6px 0 8px;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+.schemes-page .page-description {
+  margin: 0;
+  max-width: 720px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   REFRESH BUTTON
+========================================================= */
+
+.schemes-refresh-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+
+  background: #ffffff;
+  color: #17365d;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.schemes-refresh-button:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.schemes-refresh-button:active {
+  transform: translateY(1px);
+}
+
+
+/* =========================================================
+   SUMMARY STATISTICS
+========================================================= */
+
+.schemes-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+
+  margin-bottom: 28px;
+}
+
+.schemes-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  min-height: 94px;
+
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #dbe3ec;
+  border-radius: 8px;
+
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.schemes-stat-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 7px;
+
+  background: #eaf2fb;
+  color: #1d4f91;
+}
+
+.schemes-stat-card span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #64748b;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.schemes-stat-card strong {
+  display: block;
+
+  color: #172b4d;
+
+  font-size: 23px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   DATA SECTION
+========================================================= */
+
+.schemes-data-section {
+  background: #ffffff;
+
+  border: 1px solid #dbe3ec;
+  border-radius: 8px;
+
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+
+  overflow: hidden;
+}
+
+.schemes-data-section .section-heading {
+  padding: 22px 24px 16px;
+  margin: 0;
+}
+
+.schemes-data-section .section-heading h2 {
+  margin: 0 0 5px;
+
+  color: #172b4d;
+
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.schemes-data-section .section-heading p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.schemes-search-container {
+  padding: 0 24px 18px;
+}
+
+.schemes-search-box {
+  width: 100%;
+  max-width: 420px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 10px 13px;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+
+  background: #ffffff;
+
+  color: #64748b;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.schemes-search-box:focus-within {
+  border-color: #3267a8;
+
+  box-shadow:
+    0 0 0 3px rgba(50, 103, 168, 0.1);
+}
+
+.schemes-search-box input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #172b4d;
+
+  font-size: 13px;
+}
+
+.schemes-search-box input::placeholder {
+  color: #94a3b8;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.schemes-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  border-top: 1px solid #e2e8f0;
+}
+
+.schemes-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 900px;
+}
+
+.schemes-table thead {
+  background: #f4f7fa;
+}
+
+.schemes-table th {
+  padding: 13px 16px;
+
+  border-bottom: 1px solid #dbe3ec;
+
+  color: #475569;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-align: left;
+
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+
+  white-space: nowrap;
+}
+
+.schemes-table td {
+  padding: 15px 16px;
+
+  border-bottom: 1px solid #edf1f5;
+
+  color: #475569;
+
+  font-size: 13px;
+
+  vertical-align: middle;
+}
+
+.schemes-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.schemes-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.schemes-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   SCHEME NAME
+========================================================= */
+
+.scheme-name {
+  color: #17365d;
+
+  font-size: 13px;
+  font-weight: 650;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   COVERAGE CELL
+========================================================= */
+
+.scheme-coverage-cell {
+  min-width: 145px;
+}
+
+.scheme-coverage-value {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 6px;
+}
+
+.scheme-coverage-value span {
+  color: #334155;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.scheme-coverage-bar {
+  width: 100%;
+  height: 5px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background: #e5e7eb;
+}
+
+.scheme-coverage-fill {
+  height: 100%;
+
+  border-radius: 10px;
+
+  background: #3267a8;
+
+  transition: width 0.4s ease;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+========================================================= */
+
+.scheme-status {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 9px;
+
+  border-radius: 4px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.scheme-status-good {
+  background: #e8f5ee;
+  color: #216e4e;
+}
+
+.scheme-status-attention {
+  background: #fff6df;
+  color: #946200;
+}
+
+.scheme-status-critical {
+  background: #fdecec;
+  color: #b42318;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.schemes-loading {
+  padding: 55px 20px;
+
+  text-align: center;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.schemes-error {
+  margin: 20px 24px;
+  padding: 14px 16px;
+
+  border: 1px solid #f1b7b7;
+  border-radius: 6px;
+
+  background: #fff5f5;
+
+  color: #a61b1b;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.schemes-empty {
+  padding: 55px 20px;
+
+  text-align: center;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .schemes-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .schemes-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .schemes-data-section .section-heading {
+    padding: 18px;
+  }
+
+  .schemes-search-container {
+    padding: 0 18px 16px;
+  }
+
+  .schemes-stat-card {
+    min-height: 82px;
+  }
+
+}

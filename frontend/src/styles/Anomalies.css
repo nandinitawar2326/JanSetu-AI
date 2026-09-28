@@ -1,0 +1,392 @@
+﻿.anomalies-page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 42px 52px 70px;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+
+.anomalies-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 32px;
+}
+
+.anomalies-breadcrumb {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  color: #5c718b;
+  margin-bottom: 12px;
+}
+
+.anomalies-header h1 {
+  margin: 0;
+  color: #163f6b;
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 750;
+}
+
+.anomalies-header p {
+  margin: 10px 0 0;
+  color: #657a91;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.refresh-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 17px;
+  border: 1px solid #cbd8e5;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #174675;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.refresh-button:hover {
+  background: #f3f7fb;
+}
+
+.refresh-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* SUMMARY */
+
+.anomaly-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.anomaly-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-height: 108px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #d9e2eb;
+  border-radius: 9px;
+  box-sizing: border-box;
+}
+
+.anomaly-card-icon {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #edf4fa;
+  color: #174f83;
+}
+
+.anomaly-card.high .anomaly-card-icon {
+  background: #fff1ef;
+  color: #b13b32;
+}
+
+.anomaly-card.medium .anomaly-card-icon {
+  background: #fff7e7;
+  color: #9b6814;
+}
+
+.anomaly-card span {
+  display: block;
+  color: #647991;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.anomaly-card strong {
+  display: block;
+  color: #163f6b;
+  font-size: 25px;
+}
+
+
+/* CONTROLS */
+
+.anomaly-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #d9e2eb;
+  border-radius: 9px;
+  margin-bottom: 30px;
+}
+
+.search-box {
+  width: 360px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid #ccd8e4;
+  border-radius: 6px;
+  background: #ffffff;
+  padding: 9px 12px;
+  color: #62778d;
+}
+
+.search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #253f59;
+  background: transparent;
+}
+
+.search-box input::placeholder {
+  color: #8999aa;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-buttons button {
+  padding: 8px 15px;
+  border: 1px solid #ccd8e4;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #405970;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filter-buttons button:hover {
+  background: #f4f7fa;
+}
+
+.filter-buttons button.active {
+  background: #174f83;
+  border-color: #174f83;
+  color: #ffffff;
+}
+
+.filter-buttons button.active.high-filter {
+  background: #b13b32;
+  border-color: #b13b32;
+}
+
+.filter-buttons button.active.medium-filter {
+  background: #9b6814;
+  border-color: #9b6814;
+}
+
+
+/* CONTENT */
+
+.anomaly-content {
+  background: #ffffff;
+  border: 1px solid #d9e2eb;
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.anomaly-content .section-heading {
+  padding: 24px 26px 18px;
+  border-bottom: 1px solid #e0e7ee;
+}
+
+.anomaly-content .section-heading h2 {
+  margin: 0;
+  color: #183f67;
+  font-size: 23px;
+}
+
+.anomaly-content .section-heading p {
+  margin: 6px 0 0;
+  color: #708399;
+  font-size: 14px;
+}
+
+
+/* TABLE */
+
+.anomaly-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.anomaly-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 950px;
+}
+
+.anomaly-table th {
+  padding: 15px 18px;
+  text-align: left;
+  background: #f4f7fa;
+  border-bottom: 1px solid #dce5ed;
+  color: #536b83;
+  font-size: 12px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.45px;
+}
+
+.anomaly-table td {
+  padding: 19px 18px;
+  border-bottom: 1px solid #e5ebf1;
+  vertical-align: top;
+  color: #253f59;
+  font-size: 14px;
+}
+
+.anomaly-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.anomaly-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* SCHEME */
+
+.scheme-name {
+  color: #173f67;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.anomaly-table small {
+  display: block;
+  color: #7b8da0;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+
+/* SEVERITY */
+
+.severity-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 9px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.severity-badge.high {
+  background: #fdeceb;
+  color: #a33129;
+}
+
+.severity-badge.medium {
+  background: #fff4dc;
+  color: #8c5e0c;
+}
+
+
+/* NUMBERS */
+
+.signal-number {
+  color: #173f67;
+  font-size: 16px;
+}
+
+.performance-number {
+  color: #173f67;
+  font-size: 16px;
+}
+
+
+/* REASONS */
+
+.reasons {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #667c93;
+  line-height: 1.45;
+  max-width: 400px;
+}
+
+
+/* STATES */
+
+.anomaly-state {
+  padding: 55px 25px;
+  text-align: center;
+  color: #687d91;
+  font-size: 14px;
+}
+
+.anomaly-error {
+  margin: 20px;
+  padding: 15px 17px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #efc6c2;
+  border-radius: 7px;
+  background: #fff5f4;
+  color: #a33129;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .anomaly-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .anomalies-page {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 700px) {
+  .anomalies-page {
+    padding: 22px 16px 50px;
+  }
+
+  .anomalies-header {
+    flex-direction: column;
+  }
+
+  .anomaly-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .anomaly-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box {
+    width: auto;
+  }
+
+  .filter-buttons {
+    width: 100%;
+  }
+}

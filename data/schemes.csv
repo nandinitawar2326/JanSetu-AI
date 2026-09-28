@@ -1,0 +1,9 @@
+scheme_id,scheme_name,department_id,category,target_group
+S001,Rural Housing Support,D001,Housing,Rural Families
+S002,Rural Health Access,D002,Healthcare,Rural Families
+S003,Digital School Access,D003,Education,Students
+S004,Women Skill Initiative,D004,Skill Development,Women
+S005,Youth Skill Connect,D005,Skill Development,Youth
+S006,Community Nutrition Mission,D004,Nutrition,Women & Children
+S007,Rural Employment Support,D001,Employment,Rural Families
+S008,District Health Infrastructure,D002,Healthcare,General Population
